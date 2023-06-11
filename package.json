@@ -5,8 +5,8 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon src/server.js"
-  },
+    "start": "node src/server.js"
+  },  
   "author": "farmgenius@gmail.com",
   "license": "ISC",
   "dependencies": {

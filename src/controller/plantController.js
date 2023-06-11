@@ -1,5 +1,6 @@
 import {
-    getPlantModel, getByIdPlantModel,
+    getPlantModel,
+    getByIdPlantModel,
     postPlantModel
 } from "../models/plantModel.js"
 import { nanoid } from "nanoid"
@@ -12,7 +13,7 @@ const getPlant = async (req, res) => {
             code: 200,
             status: 'OK',
             message: 'Berhasil mengambil data tanaman',
-            data: data,
+            data: data.map(item => ({ plant_id: item.plant_id, ...item }))
         })
     } catch (error) {
         res.status(500).json({
@@ -41,7 +42,7 @@ const getByIdPlant = async (req, res) => {
                 code: 200,
                 status: 'OK',
                 message: 'Berhasil mengambil data tanaman',
-                data: data,
+                data: { plant_id: data[0].plant_id, ...data[0] },
             });
         }
     } catch (error) {
@@ -59,12 +60,12 @@ const postPlant = async (req, res) => {
     const { body } = req
     const plant_id = nanoid(16);
     try {
-        const [data] = await postPlantModel(body, plant_id) 
+        const [data] = await postPlantModel(body, plant_id)
         res.json({
             code: 200,
             status: "OK",
             message: 'Berhasil menambahkan data tanaman',
-            data: req.body,
+            data: { plant_id, ...req.body },
         })
     } catch (error) {
         res.status(500).json({
@@ -75,7 +76,6 @@ const postPlant = async (req, res) => {
         })
     }
 }
-
 
 export {
     getPlant,

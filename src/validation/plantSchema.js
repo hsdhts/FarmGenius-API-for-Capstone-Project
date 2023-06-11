@@ -3,11 +3,11 @@ import Joi from "joi"
 // rules validasi
 const plantValidate = Joi.object({
     name: Joi.string()
-        .min(5)
-        .max(50)
+        .min(3)
+        .max(255)
         .required(),
-    desc: Joi.string()
-        .min(10)
+    desc_plant: Joi.string()
+        .min(5)
         .required(),
 }).options({ abortEarly: false })
 

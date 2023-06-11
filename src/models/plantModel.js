@@ -18,8 +18,8 @@ const getByIdPlantModel = (plant_id) => {
 
 // post Data
 const postPlantModel = (body, plant_id) => { 
-    const SQLQuery = "INSERT INTO plant (plant_id, name, `desc`) VALUES (?, ?, ?)";
-    const values = [plant_id, body.name, body.desc]; 
+    const SQLQuery = "INSERT INTO plant (plant_id, name, `desc_plant`) VALUES (?, ?, ?)";
+    const values = [plant_id, body.name, body.desc_plant]; 
 
     console.log(SQLQuery)
     return dbPool.execute(SQLQuery, values)

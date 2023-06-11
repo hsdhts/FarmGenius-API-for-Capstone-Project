@@ -4,10 +4,10 @@ import dotenv from 'dotenv';
 dotenv.config()
 
 const dbPool = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
+    host: "34.101.230.214",
+    user: "root",
+    password: 'password',
+    database: 'farmgenius-db'
 });
 
 export default dbPool.promise()

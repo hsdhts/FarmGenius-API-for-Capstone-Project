@@ -1,7 +1,7 @@
 --Table user
 CREATE TABLE `user` (
   `user_id` varchar(16) primary key,
-  `nama` varchar(255),
+  `name` varchar(255),
   `email` varchar(255) unique,
   `password` varchar(225),
   `created_at` datetime,
@@ -11,17 +11,18 @@ CREATE TABLE `user` (
 --Table plant
 CREATE TABLE `plant` (
   `plant_id` varchar(16) primary key,
-  `nama` varchar(55),
-  `deskripsi_tanaman` text
+  `name` varchar(55),
+  `desc_plant` text
 );
 
 --Table disease
-CREATE TABLE `disease` (
-  `disease_id` varchar(16) primary key,
-  `name` varchar(255),
-  `deskripsi_penyakit` text,
-  `solusi` text 
+CREATE TABLE disease (
+  disease_id VARCHAR(16) NOT NULL PRIMARY KEY,
+  name VARCHAR(100),
+  `desc` TEXT,
+  solution TEXT
 );
+
 
 --Tabel detection
 CREATE TABLE detection (

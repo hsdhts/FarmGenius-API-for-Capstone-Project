@@ -53,9 +53,10 @@ const hashPassword = async (password) => {
     return hashedPassword;
 };
 
+
 // login
 const login = async (req, res) => {
-    const { body } = req
+    const { body } = req;
     try {
         const [user] = await loginAuthModel(body);
         // Check if email exists
@@ -70,7 +71,6 @@ const login = async (req, res) => {
 
         const isMatch = await bcrypt.compare(body.password, user[0].password);
         if (!isMatch) {
-
             // cek ketika password salah
             return res.status(400).json({
                 code: 400,
@@ -79,20 +79,24 @@ const login = async (req, res) => {
                 data: null,
             });
         } else {
-
-            // genreate token
+            // generate token
             const loguser = { id: user[0].user_id, email: user[0].email };
             const accessToken = jwt.sign(loguser, process.env.SECRET_KEY, { expiresIn: '1h' });
             const refreshToken = jwt.sign(loguser, process.env.REFRESH_TOKEN_KEY);
-            res.json({
+            
+            const responseData = {
                 code: 200,
                 status: "OK",
+                user_id: user[0].user_id,
+                name: user[0].name,
+                email: user[0].email,
                 message: 'Login berhasil',
-                accessToken, refreshToken
-            });
+                accessToken: accessToken,
+                refreshToken: refreshToken
+            };
+            
+            res.json(responseData);
         }
-
-
     } catch (error) {
         res.status(500).json({
             code: 500,
@@ -102,7 +106,6 @@ const login = async (req, res) => {
         })
     }
 }
-
 
 export {
     registration,

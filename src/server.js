@@ -42,6 +42,9 @@ app.use((req, res, next) => {
     res.status(status).json({ error: { status, message } });
   });
 
+app.get('/hello',(req, res) => {
+    res.send('Hello world')
+})
 
 //port
 const port = process.env.PORT || 5000
