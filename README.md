@@ -38,12 +38,11 @@ The service available:
   <pre>POST  /disease</pre>
   <pre>GET   /disease/{diseaseId}</pre>
 
-- Recomendation Store
-  <pre>GET   /store</pre>
-  <pre>POST  /store</pre>
-  <pre>PUT   /store/{storeId}</pre>
-  <pre>GET   /store/{storeId}</pre>
-  <pre>DEL   /store/{storeId}</pre>
+- Recomendation Farm
+  <pre>GET   /recommend_farm</pre>
+  <pre>POST  /recommend_farm</pre>
+  <pre>GET   /rcommend_farm/{recommend_farmId}</pre>
+
 
 # Quick Look
 
