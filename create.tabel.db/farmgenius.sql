@@ -1,4 +1,4 @@
---Table user
+--Table User
 CREATE TABLE `user` (
   `user_id` varchar(16) primary key,
   `name` varchar(255),
@@ -8,14 +8,14 @@ CREATE TABLE `user` (
   `updated_at` datetime
 );
 
---Table plant
+--Table Plant
 CREATE TABLE `plant` (
   `plant_id` varchar(16) primary key,
   `name` varchar(55),
   `desc_plant` text
 );
 
---Table disease
+--Table Disease
 CREATE TABLE disease (
   disease_id VARCHAR(16) NOT NULL PRIMARY KEY,
   name VARCHAR(100),
@@ -24,7 +24,7 @@ CREATE TABLE disease (
 );
 
 
---Tabel detection
+--Tabel Detection
 CREATE TABLE detection (
   detection_id INT AUTO_INCREMENT PRIMARY KEY,
   fileName VARCHAR(255) NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE detection (
   imageUrl VARCHAR(255) NOT NULL
 );
 
--- Tabel recommendation_farm
+-- Tabel Recommmendation Farm
 CREATE TABLE recommendation_farm (
   recommendation_id VARCHAR(16) PRIMARY KEY,
   daerah VARCHAR(100),
