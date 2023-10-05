@@ -3,7 +3,7 @@ import {
 } from "../models/recommendModel.js"
 import { nanoid } from "nanoid"
 
-//get data
+//GET RecommendPlant Data
 const getRecommend = async (req, res) => {
     try {
         const [data] = await getRecommendModel()
@@ -23,8 +23,7 @@ const getRecommend = async (req, res) => {
     }
 }
 
-//get data by id
-//get data by id
+//GET RecommendPlant Data By Id
 const getByIdRecommend = async (req, res) => {
     const { recommendation_id } = req.params;
     try {
@@ -54,7 +53,7 @@ const getByIdRecommend = async (req, res) => {
     }
 }
 
-//post 
+// POST RecommendPlant Data 
 const postRecommend = async (req, res) => {
     const { body } = req
     const recommendation_id = nanoid(16);

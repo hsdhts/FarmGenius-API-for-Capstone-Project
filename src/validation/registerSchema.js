@@ -1,6 +1,6 @@
 import Joi from "joi"
 
-//validasi
+// Rules validasi
 const registerValidate = Joi.object({
     name: Joi.string()
         .min(3)

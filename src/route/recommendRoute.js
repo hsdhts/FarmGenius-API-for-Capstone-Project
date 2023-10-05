@@ -11,13 +11,14 @@ import {
 
 const router = express.Router();
 
-// Get data
+// GET All Data recommendFarm
 router.get('/recommend_farm', auth, getRecommend)
 
+// GET Data recommendFarm By Id
 router.get('/recommend_farm/:recommendation_id', auth, getByIdRecommend);
 
 
-// Post data
+//POST Data recommendFarm By Id
 router.post('/recommend_farm', auth, validate(recommendValidate), postRecommend);
 
 export default router;

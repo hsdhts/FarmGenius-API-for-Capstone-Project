@@ -7,7 +7,7 @@ const checkEmailRegistered = async (email) => {
   return rows.length > 0;
 };
 
-// register
+// Register User Model
 const registrationAuthModel = (body, user_id, dates, hashedPassword) => {
   const SQLQuery = "INSERT INTO user (user_id, name, email, password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)";
   const values = [user_id, body.name, body.email, hashedPassword, dates, dates];
@@ -15,7 +15,7 @@ const registrationAuthModel = (body, user_id, dates, hashedPassword) => {
   return dbPool.execute(SQLQuery, values);
 };
 
-// login
+// Login User Model
 const loginAuthModel = (body) => {
   const SQLQuery = "SELECT * FROM user WHERE email=?";
   const values = [body.email];

@@ -12,13 +12,13 @@ import {
 const router = express.Router()
 
 
-// GET DATA
+// Endpoint for GET All Disease
 router.get('/disease', auth, getDisease)
 
-// GET DATA BY ID
+// Endpoint for GET Disease By Id
 router.get('/disease/:disease_id', auth, getByIdDisease)
 
-// POST DATA
+// Endpoint for POST Disease 
 router.post('/disease', auth, validate(diseaseValidate), postDisease)
 
 

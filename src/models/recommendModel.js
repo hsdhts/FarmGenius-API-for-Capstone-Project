@@ -1,14 +1,14 @@
 import dbPool from "../config/connection.js";
 import { nanoid } from "nanoid";
 
-// Get data
+// GET All Data RecommendModel
 const getRecommendModel = () => {
   const SQLQuery = "SELECT * FROM recommendation_farm";
 
   return dbPool.query(SQLQuery);
 };
 
-//get data by id
+//GET RecommendModel Data By Id
 const getByIdRecommendModel = (recommendation_id) => {
     const SQLQuery = "SELECT * FROM recommendation_farm WHERE recommendation_id=?"
     const values = [recommendation_id]
@@ -16,7 +16,7 @@ const getByIdRecommendModel = (recommendation_id) => {
     return dbPool.execute(SQLQuery, values);
 }
 
-// Post data
+// POST RecommendModel Data
 const postRecommendModel = (body) => {
   const recommendation_id = nanoid(16);
   const SQLQuery =
