@@ -5,24 +5,21 @@ import { loginValidate } from '../validation/loginSchema.js'
 import dotenv from 'dotenv'
 import jwt from 'jsonwebtoken'
 
-dotenv.config()
-
-// memanggil controller about
 import {
     registration, login
 } from '../controller/authController.js'
 
+dotenv.config()
+
 const router = express.Router()
 
-// ENDPOINT API
-
-// Auth
+// Authentication
 router.post('/login', validate(loginValidate), login)
 
 // Registration
 router.post('/register', validate(registerValidate), registration)
 
-// refreshtoken
+// Refreshtoken
 router.post('/refresh', (req, res) => {
     const refreshToken = req.body.refreshToken;
 

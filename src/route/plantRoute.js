@@ -12,13 +12,13 @@ import {
 const router = express.Router()
 
 
-// GET plant
+// GET All Data Plants  
 router.get('/plants', auth, getPlant)
 
-// GET plant BY ID
+// GET Plant By Id
 router.get('/plants/:plant_id', auth, getByIdPlant)
 
-// POST plant
+// POST Data Plant 
 router.post('/plants', auth, validate(plantValidate), postPlant)
 
 

@@ -5,7 +5,7 @@ import {
 } from "../models/plantModel.js"
 import { nanoid } from "nanoid"
 
-// Get data
+// GET  Plants Data
 const getPlant = async (req, res) => {
     try {
         const [data] = await getPlantModel()
@@ -25,7 +25,7 @@ const getPlant = async (req, res) => {
     }
 }
 
-// Get byId
+// GET Plants Data By Id
 const getByIdPlant = async (req, res) => {
     const { plant_id } = req.params
     try {
@@ -55,7 +55,7 @@ const getByIdPlant = async (req, res) => {
     }
 }
 
-// POST
+// POST Plant Data
 const postPlant = async (req, res) => {
     const { body } = req
     const plant_id = nanoid(16);
